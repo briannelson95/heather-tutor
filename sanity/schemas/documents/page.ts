@@ -1,14 +1,21 @@
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const page = defineType({
     title: 'Pages',
     name: 'page',
     type: 'document',
+    fieldsets: [
+        {
+            name: 'info',
+            title: 'Page Info'
+        }
+    ],
     fields: [
         defineField({
             title: 'Title',
             name: 'title',
             type: 'string',
+            fieldset: 'info',
         }),
         defineField({
             title: 'Slug',
@@ -17,11 +24,28 @@ export const page = defineType({
             options: {
                 source: 'title',
                 maxLength: 96
-            }
+            },
+            fieldset: 'info',
         }),
         defineField({
-            name: 'body',
-            type: 'blockContent'
-        }),
+            name: 'pageBuilder',
+            title: 'Page Builder',
+            type: 'array',
+            of: [
+                defineArrayMember({
+                    name: 'hero',
+                    type: 'hero'
+                }),
+                defineArrayMember({
+                    name: 'benefitsSection',
+                    title: 'Benefits Section',
+                    type: 'benefits'
+                }),
+                defineArrayMember({
+                    name: 'subjectGallery',
+                    type: 'subjectGallery'
+                }),
+            ]
+        })
     ],
 });
