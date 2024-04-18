@@ -28,24 +28,9 @@ export const page = defineType({
             fieldset: 'info',
         }),
         defineField({
-            name: 'pageBuilder',
-            title: 'Page Builder',
-            type: 'array',
-            of: [
-                defineArrayMember({
-                    name: 'hero',
-                    type: 'hero'
-                }),
-                defineArrayMember({
-                    name: 'benefitsSection',
-                    title: 'Benefits Section',
-                    type: 'benefits'
-                }),
-                defineArrayMember({
-                    name: 'subjectGallery',
-                    type: 'subjectGallery'
-                }),
-            ]
+            name: 'body',
+            title: 'Body',
+            type: 'blockContent',
         })
     ],
 });

@@ -6,12 +6,16 @@ import { cta } from './schemas/objects/cta'
 import { benefitsWithIllustration } from './schemas/objects/benefitsWithIllustration'
 import { subject } from './schemas/documents/subject'
 import { subjectGallery } from './schemas/objects/subjectGallery'
+import { homepage } from './schemas/documents/homepage'
+import { settings } from './schemas/documents/settings'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // documents
     page,
+    homepage,
     subject,
+    settings,
     // objects
     blockContent,
     hero,
