@@ -7,7 +7,7 @@ export default function SubjectCard(props: any) {
                 <div className='text-xl' dangerouslySetInnerHTML={{ __html: props.icon.svg }} />
             </div>
             <h3 className='text-2xl font-bold'>{props.title}</h3>
-            <p>{props.desc}</p>
+            <p className='text-center'>{props.desc}</p>
         </div>
     )
 }

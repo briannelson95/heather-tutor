@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import MailIcon from './icons/MailIcon';
 import PhoneIcon from './icons/PhoneIcon';
+import { subject } from '@/sanity/schemas/documents/subject';
 
 export default function ContactForm() {
     const subjects = ['Math', 'Science', 'History', 'English', 'Other'];
@@ -11,7 +12,7 @@ export default function ContactForm() {
         lastName: '',
         email: '',
         phone: '',
-        subject: 'Math' || 'Science' || 'History' || 'English' || 'Other',
+        subject: '',
         message: '',
     }
 
@@ -23,6 +24,10 @@ export default function ContactForm() {
         // HANDLE CONTACT API 
         console.log(data)
         setData(defaultValues)
+    }
+
+    const handleChangeSelection = (e: any) => {
+        setData({ ...data, subject: e.target.value })
     }
 
     return (
@@ -85,12 +90,14 @@ export default function ContactForm() {
                             id='subject'
                             name='subject'
                             className='rounded-lg border-2 border-gray-300 p-2 w-full text-gray-400'
+                            value={data.subject} 
+                            onChange={handleChangeSelection}
                         >
+                            <option value="" disabled>Select a subject</option>
                             {subjects.map((item: any, index: number) => (
                                 <option 
                                     key={index} 
                                     value={item} 
-                                    onChange={(e: any) => setData({ ...data, subject: e.target.value })}
                                 >
                                     {item}
                                 </option>
