@@ -22,7 +22,7 @@ export const benefitsWithIllustration = defineType({
                 defineArrayMember({
                     name: 'benefit',
                     type: 'string',
-                    validation: Rule => Rule.max(20)
+                    // validation: Rule => Rule.max(20)
                 })
             ],
             validation: Rule => Rule.max(4)

@@ -21,7 +21,8 @@ export const subjectGallery = defineType({
                     type: 'reference',
                     to: [{type: 'subject'}]
                 })
-            ]
+            ],
+            validation: Rule => Rule.max(4)
         })
     ],
     icon: BookIcon,

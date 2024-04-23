@@ -8,6 +8,9 @@ import { subject } from './schemas/documents/subject'
 import { subjectGallery } from './schemas/objects/subjectGallery'
 import { homepage } from './schemas/documents/homepage'
 import { settings } from './schemas/documents/settings'
+import { seo } from './schemas/objects/seo'
+import { blog } from './schemas/documents/blog'
+import { pageBuilder } from './schemas/objects/pageBuilder'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,11 +19,14 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homepage,
     subject,
     settings,
+    blog,
     // objects
     blockContent,
     hero,
     cta,
     benefitsWithIllustration,
     subjectGallery,
+    seo,
+    pageBuilder,
   ],
 }

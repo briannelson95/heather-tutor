@@ -7,7 +7,7 @@ export default function Hero(props: any) {
     return (
         <div className='w-full bg-gray-300 pt-24 px-24 pb-16 grid grid-cols-5 gap-12'>
             <div className='space-y-9 col-span-3 p-4'>
-                <h1 className='text-6xl font-bold'>{props.heading}</h1>
+                <h1 className='text-5xl font-bold'>{props.heading}</h1>
                 <p className='w-4/5'>{props.tagline}</p>
                 <div className='flex gap-4'>
                     {props.cta && (

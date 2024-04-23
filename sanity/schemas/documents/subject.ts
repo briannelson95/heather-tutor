@@ -1,10 +1,12 @@
 import { defineField, defineType } from "sanity";
 import { preview } from 'sanity-plugin-icon-picker';
+import {ProjectsIcon} from '@sanity/icons'
 
 export const subject = defineType({
     title: 'Subjects',
     name: 'subject',
     type: 'document',
+    icon: ProjectsIcon,
     fieldsets: [
         {
             name: 'info', 

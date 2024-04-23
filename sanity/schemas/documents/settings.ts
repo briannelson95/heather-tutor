@@ -10,6 +10,14 @@ export const settings = defineType({
             name: 'site',
             type: 'string',
         }),
-        
+        defineField({
+            name: 'favicon',
+            type: 'file'
+        }),
+        defineField({
+            name: 'seo',
+            title: 'SEO',
+            type: 'seo'
+        })
     ],
 })
