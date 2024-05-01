@@ -25,7 +25,7 @@ export const benefitsWithIllustration = defineType({
                     // validation: Rule => Rule.max(20)
                 })
             ],
-            validation: Rule => Rule.max(4)
+            // validation: Rule => Rule.max(4)
         }),
         defineField({
             name: 'image',

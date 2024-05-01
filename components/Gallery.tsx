@@ -9,7 +9,7 @@ export default function Gallery(props: any) {
             <div className='max-w-2xl mx-auto flex flex-col items-center space-y-6 text-center mb-12'>
                 <h2 className='text-5xl font-bold'>My Subjects</h2>
                 <p>{props.desc}</p>
-                <PrimaryButton link='/contact' text='Book Now' />
+                <PrimaryButton link='/#pricing' text='Book Now' />
             </div>
             <div className='grid grid-cols-4 gap-9'>
                 {props.subjectList && props.subjectList.map((item: any, index: number) => (

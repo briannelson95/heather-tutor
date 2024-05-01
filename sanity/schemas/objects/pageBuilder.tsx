@@ -30,6 +30,14 @@ export const pageBuilder = defineType({
                 })
             ],
             icon: BlockContentIcon
+        }),
+        defineArrayMember({
+            name: 'mainImage',
+            title: 'Main Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
         })
     ]
 })

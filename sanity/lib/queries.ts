@@ -17,4 +17,10 @@ export const homepageQuery = groq`
             }
         }
     }
+`;
+
+export const aboutQuery = groq`
+    *[_type == "page" && title == "About"]{
+        ...
+    }
 `
