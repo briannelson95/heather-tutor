@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar'
 import ChevronLeftIcon from '@/components/icons/ChevronLeftIcon'
 import { client } from '@/sanity/lib/client';
