@@ -33,7 +33,6 @@ export default function ContactForm() {
             setEmailData({});
             // toast.success('Email Sent')
         }
-        // console.log(data)
         setEmailData(defaultValues)
     }
 

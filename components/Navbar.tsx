@@ -16,7 +16,6 @@ type NavItem = {
 }
 
 export default function Navbar(props: NavbarProps) {
-    // console.log(props.navItems[0])
     return (
         <nav className='py-4 px-16 flex justify-between items-center'>
             <ul className='flex gap-12 text-xl items-center'>

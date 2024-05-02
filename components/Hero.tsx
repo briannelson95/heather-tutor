@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 import PrimaryButton from './PrimaryButton'
 import { urlForImage } from '@/sanity/lib/image'

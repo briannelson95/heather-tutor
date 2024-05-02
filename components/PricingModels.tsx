@@ -1,5 +1,4 @@
 import React from 'react'
-import PrimaryButton from './PrimaryButton'
 import Link from 'next/link'
 
 export default function PricingModels(props: any) {
