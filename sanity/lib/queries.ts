@@ -23,4 +23,18 @@ export const aboutQuery = groq`
     *[_type == "page" && title == "About"]{
         ...
     }
+`;
+
+export const settingsQuery = groq`
+    *[_type == "settings" && _id == "settings"][0]{
+        ...,
+        navigation[]{
+            ...,
+            link->{
+                slug{
+                    current
+                }
+            }
+        }
+    }
 `

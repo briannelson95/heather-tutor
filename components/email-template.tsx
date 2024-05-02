@@ -64,23 +64,20 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             <div className="container">
                 <h2>Contact Form Submission</h2>
                 <div className="info">
-                    <label htmlFor="firstName">First Name:</label>
-                    <span id="firstName">{firstName}</span>
+                    <label htmlFor="firstName">Name: </label>
+                    <span id="firstName">{firstName} {lastName}</span>
                     <br />
-                    <label htmlFor="lastName">Last Name:</label>
-                    <span id="lastName">{lastName}</span>
-                    <br />
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Email: </label>
                     <span id="email">{email}</span>
                     <br />
-                    <label htmlFor="phone">Phone:</label>
+                    <label htmlFor="phone">Phone: </label>
                     <span id="phone">{phone}</span>
                     <br />
-                    <label htmlFor="subject">Subject:</label>
+                    <label htmlFor="subject">Subject: </label>
                     <span id="subject">{subject}</span>
                 </div>
                 <div className="message">
-                    <label htmlFor="message">Message:</label>
+                    <label htmlFor="message">Message: </label>
                     <p id="message">{message}</p>
                 </div>
             </div>

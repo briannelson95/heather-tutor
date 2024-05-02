@@ -4,7 +4,6 @@ import PricingModels from "@/components/PricingModels";
 import TextWithImage from "@/components/TextWithImage";
 import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
-import Image from "next/image";
 
 export default async function Home() {
   const data = await client.fetch(homepageQuery)
@@ -12,7 +11,6 @@ export default async function Home() {
   const benefits = data[0].pageBuilder.find((item: any) => item._type === 'benefitsSection');
   const subjects = data[0].pageBuilder.find((item: any) => item._type === 'subjectGallery');
   const pricing = data[0].pageBuilder.find((item: any) => item._type === 'pricing');
-  // console.log(pricing)
   return (
     <main className="">
       <section>

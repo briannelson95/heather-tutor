@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import MailIcon from './icons/MailIcon';
 import PhoneIcon from './icons/PhoneIcon';
-import { subject } from '@/sanity/schemas/documents/subject';
 
 export default function ContactForm() {
     const subjects = ['Math', 'Science', 'History', 'English', 'Other'];

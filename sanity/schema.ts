@@ -12,6 +12,8 @@ import { seo } from './schemas/objects/seo'
 import { blog } from './schemas/documents/blog'
 import { pageBuilder } from './schemas/objects/pageBuilder'
 import { pricing } from './schemas/objects/pricing'
+import { navigation } from './schemas/objects/navigation'
+import { socials } from './schemas/objects/socials'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -30,5 +32,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     seo,
     pageBuilder,
     pricing,
+    navigation,
+    socials,
   ],
 }

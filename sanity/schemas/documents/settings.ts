@@ -1,18 +1,32 @@
+import { CogIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 export const settings = defineType({
     title: 'Settings',
     name: 'settings',
     type: 'document',
+    icon: CogIcon,
     fields: [
         defineField({
             title: 'Site Title',
-            name: 'site',
+            name: 'siteTitle',
             type: 'string',
+        }),
+        defineField({
+            name: 'logo',
+            type: 'image'
         }),
         defineField({
             name: 'favicon',
             type: 'file'
+        }),
+        defineField({
+            name: 'navigation',
+            type: 'navigation'
+        }),
+        defineField({
+            name: 'socials',
+            type: 'socials'
         }),
         defineField({
             name: 'seo',
@@ -20,4 +34,12 @@ export const settings = defineType({
             type: 'seo'
         })
     ],
+    preview: {
+        prepare({ icon, siteTitle }: any) {
+            return {
+                title: siteTitle,
+                media: icon
+            }
+          }        
+    }
 })

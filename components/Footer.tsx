@@ -1,15 +1,30 @@
 import React from 'react'
 import InstagramIcon from './icons/InstagramIcon'
 import FacebookIcon from './icons/FacebookIcon'
+import { urlForImage } from '@/sanity/lib/image';
+import Image from 'next/image';
 
-export default function Footer() {
+type FooterProps = {
+    image: any;
+}
+
+export default function Footer(props: FooterProps) {
     return (
         <footer className='py-6 px-16 border border-t'>
             <div className="grid grid-cols-5">
                 <div className='space-y-2'>
                     <div className='flex gap-2 items-center'>
-                        <div className='w-6 h-6 aspect-square rounded-full bg-gray-700' />
-                        <h2 className='text-2xl font-bold'>Weir&apos;s Tutoring</h2>
+                        {props.image && (
+                             <Image
+                                src={urlForImage(props.image)}
+                                height={100}
+                                width={100}
+                                alt='Weir Logo'
+                                className='w-6 h-6 aspect-square'
+                            />
+                        )}
+                       
+                        {/* <h2 className='text-2xl font-bold'>Weir&apos;s Tutoring</h2> */}
                     </div>
                     <div className='space-y-2'>
                         <p className='font-medium'>Follow Me</p>
