@@ -5,7 +5,7 @@ import React from 'react'
 export default function Contactpage() {
     return (
         <main className='bg-gray-300 min-h-screen'>
-            <div className='w-full pt-20 px-16 grid grid-cols-2'>
+            <div className='w-full p-4 md:pt-20 md:px-16 md:grid grid-cols-2 space-y-4'>
                 <ContactInfo />
                 <ContactForm />
             </div>

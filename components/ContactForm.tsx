@@ -42,7 +42,7 @@ export default function ContactForm() {
 
     return (
         <div className='bg-white rounded-xl p-4'>
-            <h2 className='text-5xl'>Get in Touch</h2>
+            <h2 className='text-2xl md:text-5xl'>Get in Touch</h2>
             <form className='mt-4 space-y-4'>
                 <fieldset className='flex gap-4 w-full'>
                     <input

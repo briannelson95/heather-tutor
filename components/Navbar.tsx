@@ -1,8 +1,10 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import PrimaryButton from './PrimaryButton'
 import Image from 'next/image';
 import { urlForImage } from '@/sanity/lib/image';
+import HamburgerIcon from './icons/HamburgerIcon';
 
 type NavbarProps = {
     image: any;
@@ -16,9 +18,18 @@ type NavItem = {
 }
 
 export default function Navbar(props: NavbarProps) {
+    const [open, setOpen] = useState<boolean>(false);
+
+    const handleOpen = () => {
+        setOpen(!open)
+    }
+
     return (
-        <nav className='py-4 px-16 flex justify-between items-center'>
-            <ul className='flex gap-12 text-xl items-center'>
+        <nav className='p-2 md:py-4 md:px-16 flex w-full md:justify-between items-center'>
+            <ul className='flex justify-between gap-4 md:gap-12 md:text-xl items-center'>
+                {/* <button onClick={handleOpen}>
+                    <HamburgerIcon />
+                </button> */}
                 <li>
                     <Link href={'/'}>
                         <Image
@@ -39,7 +50,9 @@ export default function Navbar(props: NavbarProps) {
                     </li>
                 ))}
             </ul>
-            <PrimaryButton link='/contact' text='Get Started' />
+            <div className='hidden md:block'>
+                <PrimaryButton link='/contact' text='Get Started' />
+            </div>
         </nav>
     )
 }
