@@ -16,18 +16,30 @@ export default function ContactForm() {
         message: '',
     }
 
-    const [data, setData]: any = useState(defaultValues);
+    const [emailData, setEmailData]: any = useState(defaultValues);
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault()
 
-        // HANDLE CONTACT API 
-        console.log(data)
-        setData(defaultValues)
+        // SEND EMAIL
+        const response = await fetch('api/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ emailData })
+        });
+
+        if (response.status === 200) {
+            setEmailData({});
+            // toast.success('Email Sent')
+        }
+        // console.log(data)
+        setEmailData(defaultValues)
     }
 
     const handleChangeSelection = (e: any) => {
-        setData({ ...data, subject: e.target.value })
+        setEmailData({ ...emailData, subject: e.target.value })
     }
 
     return (
@@ -40,8 +52,8 @@ export default function ContactForm() {
                         id='fname'
                         name='fname'
                         placeholder='First Name'
-                        value={data.firstName}
-                        onChange={(e: any) => setData({ ...data, firstName: e.target.value })}
+                        value={emailData.firstName}
+                        onChange={(e: any) => setEmailData({ ...emailData, firstName: e.target.value })}
                         className='rounded-lg border-2 border-gray-300 p-2 w-1/2'
                         required
                     />
@@ -50,8 +62,8 @@ export default function ContactForm() {
                         id='lname'
                         name='lname'
                         placeholder='Last Name'
-                        value={data.lastName}
-                        onChange={(e: any) => setData({ ...data, lastName: e.target.value })}
+                        value={emailData.lastName}
+                        onChange={(e: any) => setEmailData({ ...emailData, lastName: e.target.value })}
                         className='rounded-lg border-2 border-gray-300 p-2 w-1/2'
                     />
                 </fieldset>
@@ -65,8 +77,8 @@ export default function ContactForm() {
                             id='email'
                             name='email'
                             placeholder='Email'
-                            value={data.email}
-                            onChange={(e: any) => setData({ ...data, email: e.target.value })}
+                            value={emailData.email}
+                            onChange={(e: any) => setEmailData({ ...emailData, email: e.target.value })}
                             className='rounded-lg border-2 border-gray-300 p-2 pl-10 w-full'
                             required
                         />
@@ -80,8 +92,8 @@ export default function ContactForm() {
                             id='phone'
                             name='phone'
                             placeholder='Phone'
-                            value={data.phone}
-                            onChange={(e: any) => setData({ ...data, phone: e.target.value })}
+                            value={emailData.phone}
+                            onChange={(e: any) => setEmailData({ ...emailData, phone: e.target.value })}
                             className='rounded-lg border-2 border-gray-300 p-2 pl-10 w-full'
                         />
                     </label>
@@ -90,7 +102,7 @@ export default function ContactForm() {
                             id='subject'
                             name='subject'
                             className='rounded-lg border-2 border-gray-300 p-2 w-full text-gray-400'
-                            value={data.subject} 
+                            value={emailData.subject} 
                             onChange={handleChangeSelection}
                         >
                             <option value="" disabled>Select a subject</option>
@@ -109,8 +121,8 @@ export default function ContactForm() {
                         name='message'
                         placeholder='Message'
                         rows={5}
-                        value={data.message}
-                        onChange={(e: any) => setData({ ...data, message: e.target.value })}
+                        value={emailData.message}
+                        onChange={(e: any) => setEmailData({ ...emailData, message: e.target.value })}
                         className='rounded-lg border-2 border-gray-300 p-2 w-full'
                         required
                     />
@@ -119,7 +131,7 @@ export default function ContactForm() {
                     <button 
                         onClick={handleSubmit}
                         className='bg-gray-400 text-white font-bold text-xl py-3 px-10 rounded-lg disabled:bg-gray-200'
-                        disabled={data.firstName == '' || data.email == '' || data.message == ''}
+                        disabled={emailData.firstName == '' || emailData.email == '' || emailData.message == ''}
                     >
                         Submit
                     </button>
