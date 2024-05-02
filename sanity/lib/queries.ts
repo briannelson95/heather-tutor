@@ -5,15 +5,15 @@ export const homepageQuery = groq`
         ...,
         pageBuilder[]{
             _type == "subjectGallery" => {
-            ...,
-            subjectList[]->{
-                title,
-                desc,
-                icon
-            }
+                ...,
+                subjectList[]->{
+                    title,
+                    desc,
+                    icon
+                }
             },
             _type != "subjectGallery" => {
-            ...
+                ...
             }
         }
     }

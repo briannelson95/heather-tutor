@@ -38,6 +38,6 @@ export const pageBuilder = defineType({
             options: {
                 hotspot: true
             }
-        })
+        }),
     ]
 })

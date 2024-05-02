@@ -8,10 +8,11 @@ import Image from "next/image";
 
 export default async function Home() {
   const data = await client.fetch(homepageQuery)
-  const hero = data[0].pageBuilder[0];
-  const benefits = data[0].pageBuilder[1];
-  const subjects = data[0].pageBuilder[2];
-  // console.log(subjects)
+  const hero = data[0].pageBuilder.find((item: any) => item._type === 'hero');
+  const benefits = data[0].pageBuilder.find((item: any) => item._type === 'benefitsSection');
+  const subjects = data[0].pageBuilder.find((item: any) => item._type === 'subjectGallery');
+  const pricing = data[0].pageBuilder.find((item: any) => item._type === 'pricing');
+  // console.log(pricing)
   return (
     <main className="">
       <section>
@@ -24,7 +25,7 @@ export default async function Home() {
         <Gallery {...subjects} />
       </section>
       <section id="pricing">
-        <PricingModels />
+        <PricingModels {...pricing} />
       </section>
     </main>
   );

@@ -11,6 +11,7 @@ import { settings } from './schemas/documents/settings'
 import { seo } from './schemas/objects/seo'
 import { blog } from './schemas/documents/blog'
 import { pageBuilder } from './schemas/objects/pageBuilder'
+import { pricing } from './schemas/objects/pricing'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -28,5 +29,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     subjectGallery,
     seo,
     pageBuilder,
+    pricing,
   ],
 }

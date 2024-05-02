@@ -1,3 +1,4 @@
+import MoneyFilledIcon from "@/components/icons/MoneyFilledIcon";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const homepage = defineType({
@@ -45,6 +46,12 @@ export const homepage = defineType({
                     name: 'subjectGallery',
                     type: 'subjectGallery'
                 }),
+                defineArrayMember({
+                    name: 'pricing',
+                    title: 'Pricing',
+                    type: 'pricing',
+                    icon: MoneyFilledIcon,
+                })
             ]
         })
     ],

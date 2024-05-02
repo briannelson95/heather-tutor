@@ -4,7 +4,7 @@ import FacebookIcon from './icons/FacebookIcon'
 
 export default function Footer() {
     return (
-        <footer className='py-6 px-16'>
+        <footer className='py-6 px-16 border border-t'>
             <div className="grid grid-cols-5">
                 <div className='space-y-2'>
                     <div className='flex gap-2 items-center'>
