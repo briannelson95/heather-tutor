@@ -1,7 +1,7 @@
 import { urlForImage } from '@/sanity/lib/image'
 import React from 'react'
-import CheckIcon from './icons/CheckIcon'
 import Link from 'next/link'
+import StarIcon from './icons/StarIcon'
 
 export default function TextWithImage(props: any) {
     return (
@@ -13,7 +13,7 @@ export default function TextWithImage(props: any) {
                 <div className='grid grid-cols-2 gap-2 pb-10 w-5/6'>
                     {props.benefitList && props.benefitList.map((item: any, index: number) => (
                         <div key={index} className='flex gap-2'>
-                            <CheckIcon />
+                            <StarIcon />
                             {item}
                         </div>
                     ))}
