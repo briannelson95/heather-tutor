@@ -20,7 +20,7 @@ export const homepageQuery = groq`
 `;
 
 export const aboutQuery = groq`
-    *[_type == "page" && title == "About"]{
+    *[_type == "page" && title == "About"][0]{
         ...
     }
 `;
@@ -35,6 +35,19 @@ export const settingsQuery = groq`
                     current
                 }
             }
-        }
+        },
+        "favicon": favicon.asset->url
     }
+`;
+
+export const thankYouQuery = groq`
+    *[_type == "page" && title == "Thank you"][0]{
+        title,
+        slug,
+        body
+    }
+`;
+
+export const pageQuery = groq`
+    *[]
 `

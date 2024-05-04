@@ -11,6 +11,18 @@ export const seo = defineType({
             type: 'string',
         }),
         defineField({
+            name: 'separator',
+            type: 'string',
+            options: {
+                list: [
+                    {title: '-', value: '-'},
+                    {title: '|', value: '|'},
+                    {title: '[space]', value: ' '},
+                    {title: '>', value: '>'}
+                ]   
+            }
+        }),
+        defineField({
             name: 'desc',
             title: 'Description',
             type: 'text'

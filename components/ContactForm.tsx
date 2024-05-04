@@ -2,8 +2,11 @@
 import React, { useState } from 'react'
 import MailIcon from './icons/MailIcon';
 import PhoneIcon from './icons/PhoneIcon';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 export default function ContactForm() {
+    const router = useRouter();
     const subjects = ['Math', 'Science', 'History', 'English', 'Other'];
 
     const defaultValues = {
@@ -31,7 +34,8 @@ export default function ContactForm() {
 
         if (response.status === 200) {
             setEmailData({});
-            // toast.success('Email Sent')
+            toast.success('Email Sent')
+            router.push('/thank-you')
         }
         setEmailData(defaultValues)
     }
