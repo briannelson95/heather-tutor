@@ -4,7 +4,7 @@ import { urlForImage } from '@/sanity/lib/image'
 
 export default function Hero(props: any) {
     return (
-        <div className='w-full bg-gray-300 p-4 md:pt-24 md:px-24 md:pb-16 grid grid-cols-1 md:grid-cols-5 gap-12'>
+        <div className='w-full bg-brand-primary-bg p-4 md:pt-24 md:px-24 md:pb-16 grid grid-cols-1 md:grid-cols-5 gap-12'>
             <div className='space-y-4 md:space-y-9 md:col-span-3 p-4'>
                 <h1 className='text-3xl md:text-5xl font-bold'>{props.heading}</h1>
                 <div>

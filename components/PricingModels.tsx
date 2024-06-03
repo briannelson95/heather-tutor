@@ -9,7 +9,7 @@ export default function PricingModels(props: any) {
                 <p className='text-center max-w-3xl'>{props.pricingDesc}</p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full place-items-center'>
                     {props.optionsArray && props.optionsArray.map((option: any) => (
-                        <div key={option._key} className='w-full h-auto rounded-xl p-4 bg-gray-200 flex flex-col justify-between max-w-sm'>
+                        <div key={option._key} className='w-full h-auto rounded-xl p-4 bg-brand-gray-blue flex flex-col justify-between max-w-sm'>
                             <div className='space-y-2 mb-4'>
                                 <div className='flex items-center gap-2'>
                                     <div className='text-2xl' dangerouslySetInnerHTML={{ __html: option.optionIcon.svg }} />
@@ -19,7 +19,7 @@ export default function PricingModels(props: any) {
                                 <p className='text-4xl font-medium'>${option.optionPrice}<span className='text-xl font-normal'>/hour</span></p>
                                 <p className='text-sm text-gray-600'>{option.optionDesc}</p>
                             </div>
-                            <Link className='w-full text-xl py-3 px-6 rounded-lg border-2 border-white bg-white flex justify-center justify-self-end' href={'/contact'}>
+                            <Link className='w-full text-xl py-3 px-6 rounded-lg border-2 bg-brand-secondary text-white font-medium hover:bg-brand-secondary-hover transition-colors duration-200 flex justify-center justify-self-end' href={'/contact'}>
                                 Get Started
                             </Link>
                         </div>

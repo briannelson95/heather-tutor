@@ -10,8 +10,8 @@ type FooterProps = {
 
 export default function Footer(props: FooterProps) {
     return (
-        <footer className='py-6 px-16 border border-t'>
-            <div className="grid grid-cols-5">
+        <footer className='py-6 px-16 border border-t border-brand-gray-blue'>
+            <div className="grid grid-cols-8">
                 <div className='space-y-2'>
                     <div className='flex gap-2 items-center'>
                         {props.image && (
@@ -20,23 +20,24 @@ export default function Footer(props: FooterProps) {
                                 height={100}
                                 width={100}
                                 alt='Weir Logo'
-                                className='w-6 h-6 aspect-square'
+                                className='w-10 h-10 aspect-square'
                             />
                         )}
                        
-                        {/* <h2 className='text-2xl font-bold'>Weir&apos;s Tutoring</h2> */}
+                        {/* <h2 className='text-md font-bold'>Ms. Weir&apos;s Tutoring</h2> */}
                     </div>
-                    <div className='space-y-2'>
+                    {/* <div className='space-y-2'>
                         <p className='font-medium'>Follow Me</p>
                         <div className='flex gap-2'>
                             <InstagramIcon />
                             <FacebookIcon />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div>
-                    <ul>
+                    <ul className='flex gap-10 items-center'>
                         <li>Home</li>
+                        <li>About</li>
                         <li>Contact</li>
                     </ul>
                 </div>

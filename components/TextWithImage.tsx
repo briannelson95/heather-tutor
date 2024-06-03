@@ -23,7 +23,7 @@ export default function TextWithImage(props: any) {
                 </div>
                 <Link
                     href={'/contact'}
-                    className='border-2 border-black text-xl font-medium md:font-bold py-3 px-6 rounded-lg'
+                    className='border-2 border-brand-purple text-brand-purple text-xl font-medium md:font-bold py-3 px-6 rounded-lg'
                 >
                     Contact Me
                 </Link>
