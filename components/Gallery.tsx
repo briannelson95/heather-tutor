@@ -4,7 +4,7 @@ import SubjectCard from './SubjectCard'
 
 export default function Gallery(props: any) {
     return (
-        <div className='w-full bg-gray-300 p-4 md:pt-12 md:pb-28 md:px-16'>
+        <div className='w-full bg-brand-primary-bg p-4 md:pt-12 md:pb-28 md:px-16'>
             <div className='max-w-2xl mx-auto flex flex-col items-center space-y-6 text-center mb-12'>
                 <h2 className='text-3xl md:text-5xl font-bold'>My Subjects</h2>
                 <p>{props.desc}</p>

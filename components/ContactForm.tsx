@@ -52,7 +52,7 @@ export default function ContactForm() {
                         placeholder='First Name'
                         value={emailData.firstName}
                         onChange={(e: any) => setEmailData({ ...emailData, firstName: e.target.value })}
-                        className='rounded-lg border-2 border-gray-300 p-2 w-1/2'
+                        className='rounded-lg border-2 border-brand-primary-bg/50 p-2 w-1/2'
                         required
                     />
                     <input
@@ -62,7 +62,7 @@ export default function ContactForm() {
                         placeholder='Last Name'
                         value={emailData.lastName}
                         onChange={(e: any) => setEmailData({ ...emailData, lastName: e.target.value })}
-                        className='rounded-lg border-2 border-gray-300 p-2 w-1/2'
+                        className='rounded-lg border-2 border-brand-primary-bg/50 p-2 w-1/2'
                     />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
@@ -77,7 +77,7 @@ export default function ContactForm() {
                             placeholder='Email'
                             value={emailData.email}
                             onChange={(e: any) => setEmailData({ ...emailData, email: e.target.value })}
-                            className='rounded-lg border-2 border-gray-300 p-2 pl-10 w-full'
+                            className='rounded-lg border-2 border-brand-primary-bg/50 p-2 pl-10 w-full'
                             required
                         />
                     </label>
@@ -92,14 +92,14 @@ export default function ContactForm() {
                             placeholder='Phone'
                             value={emailData.phone}
                             onChange={(e: any) => setEmailData({ ...emailData, phone: e.target.value })}
-                            className='rounded-lg border-2 border-gray-300 p-2 pl-10 w-full'
+                            className='rounded-lg border-2 border-brand-primary-bg/50 p-2 pl-10 w-full'
                         />
                     </label>
                     <label htmlFor='subject' className='relative'>
                         <select 
                             id='subject'
                             name='subject'
-                            className='rounded-lg border-2 border-gray-300 p-2 w-full text-gray-400'
+                            className='rounded-lg border-2 border-brand-primary-bg/50 p-2 w-full text-gray-400'
                             value={emailData.subject} 
                             onChange={handleChangeSelection}
                         >
@@ -121,14 +121,14 @@ export default function ContactForm() {
                         rows={5}
                         value={emailData.message}
                         onChange={(e: any) => setEmailData({ ...emailData, message: e.target.value })}
-                        className='rounded-lg border-2 border-gray-300 p-2 w-full'
+                        className='rounded-lg border-2 border-brand-primary-bg/50 p-2 w-full'
                         required
                     />
                 </fieldset>
                 <div className='flex justify-end'>
                     <button 
                         onClick={handleSubmit}
-                        className='bg-gray-400 text-white font-bold text-xl py-3 px-10 rounded-lg disabled:bg-gray-200'
+                        className='bg-brand-secondary text-white font-bold text-xl py-3 px-10 rounded-lg disabled:bg-gray-200'
                         disabled={emailData.firstName == '' || emailData.email == '' || emailData.message == ''}
                     >
                         Submit
