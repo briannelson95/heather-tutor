@@ -15,12 +15,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   const data = await client.fetch(settingsQuery);
-  // console.log(data.navigation)
   return (
       <div className={inter.className}>
-          <Navbar image={data.logo} navItems={data.navigation}/>
           {children}
-          <Footer image={data.logo} />
       </div>
   );
 }

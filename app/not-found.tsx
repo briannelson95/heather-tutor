@@ -9,7 +9,6 @@ export default async function NotFound() {
     const data = await client.fetch(settingsQuery);
     return (
         <main>
-            <Navbar image={data.logo} navItems={data.navigation}/>
             <div className='bg-gray-300 min-h-screen px-16 py-6 space-y-2'>
                 <h2 className='text-3xl font-bold'>Page Not Found</h2>
                 <p>Could not find requested resource</p>
@@ -18,7 +17,6 @@ export default async function NotFound() {
                     Return Home
                 </Link>
             </div>
-            <Footer image={data.logo} />
         </main>
     )
 }
